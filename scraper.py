@@ -32,7 +32,7 @@ for i, course_num in enumerate(courses.split(",")):
         url = f"https://kurser.dtu.dk/course/{course_num}"
         print(url)
         html = requests.get(url, cookies={
-            'ASP.NET_SessionId': "rmy3f5suyqv5ibeumzbaw2oh",
+            'ASP.NET_SessionId': "",
             r"{DTUCoursesPublicLanguage}": "en-GB"}).content
 
         soup = BeautifulSoup(html, features="lxml")
