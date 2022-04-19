@@ -1,0 +1,14 @@
+The course content is the mathematical basis for a broad range of technical fields and also provides a starting point for further studies in mathematics and applied mathematics. The dominating theme of the course is linearity. The goal is to give students the ability to employ fundamental tools of mathematics in theoretical studies as well as in applied thematic exercises and projects. The use of modern computer software supports both of these aspects. A student who has met the objectives of the course will be able to:
+use the algeraic and the geometric representation of complex numbers including the complex exponential function.
+use matrix algebra and Gaussian elimination for solving systems of linear equations.
+analyse and explain the linear structure of solution sets in vector spaces.
+perform calculations with the elementary functions including their inverse functions.
+use Taylor's formulas for approximizations and limits.
+solve elementary first and second order differential equations and systems of differential equations.
+calculate extremas for multivariate functions, especially on domains with boundary.
+parameterise elementary curves, surfaces and massive solids and calculate elementary curve, surface and volume integrals.
+use Gauss's and Stokes's theorems in simple applications.
+use mathematical terminology and reasoning in oral as well as written presentation.
+coordinate joint work in groups around thematic exercises and applications.
+use computer algebraic systems (at present Maple) for solving and visualisation of mathematical problems. Linear equations and linear maps. Matrix algebra. Vektor spaces. Eigenvalue problems. Symmetric and orthogonal matrices. Complex numbers. Linear differential equations. Standard functions. Functions of one and several real variables: linear approximations and partial derivatives, Taylor expansions and quadratic forms, extrema and level curves, line, surface and volume integrals. Vector fields, Gauss' and Stokes' theorem.
+Applications of MAPLE in the above areas. Examples of applications in the engineering sciences.
