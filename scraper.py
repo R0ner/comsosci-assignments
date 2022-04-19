@@ -11,9 +11,6 @@ import json
 import sys
 import datetime
 import traceback
-from fake_useragent import UserAgent
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -84,7 +81,7 @@ for i, course_num in enumerate(courses.split(",")):
         course_dict[course_num] = course
 
     except KeyboardInterrupt:
-        break
+        exit()
     except Exception as e:
         print("ERROR:", str(e))
         print("Skipping " + str(course_num))
