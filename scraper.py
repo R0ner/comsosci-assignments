@@ -1,35 +1,29 @@
 # -*- coding: utf8 -*-
 import json
 import time
-
+import os
 import requests
-import re
-import pickle
-import pprint
 from bs4 import BeautifulSoup
-import json
-import sys
-import datetime
-import traceback
+from dotenv import load_dotenv
 
-chrome_options = Options()
-chrome_options.add_argument("--headless")
+load_dotenv()
 
 course_dict = {}
-driver = webdriver.Chrome(options=chrome_options)
 
 with open("coursenumbers.txt", "r") as f:
     courses = f.read()
 
-for i, course_num in enumerate(courses.split(",")):
+courses = set(courses.split(","))
+
+for i, course_num in enumerate(courses):
     try:
         course = {}
 
-        print("Course: "+course_num)
+        print(f"Course: {course_num} ({i + 1}/{len(courses)})")
         url = f"https://kurser.dtu.dk/course/{course_num}"
-        print(url)
+
         html = requests.get(url, cookies={
-            'ASP.NET_SessionId': "",
+            'ASP.NET_SessionId': os.environ["ASP_NET_SESSIONID"],
             r"{DTUCoursesPublicLanguage}": "en-GB"}).content
 
         soup = BeautifulSoup(html, features="lxml")
@@ -43,13 +37,12 @@ for i, course_num in enumerate(courses.split(",")):
         outer_divs_removed = bottom_layers_removed.split('<div class="box">')[
             1]
         right_bar_text = BeautifulSoup(
-            outer_divs_removed, features="lxml").text
+            outer_divs_removed, features="lxml").get_text(separator=" ")
 
         course["description"] = right_bar_text
 
         # process left bar
         table_rows = left_bar.find_all("tr")
-        print(len(table_rows))
         for row in table_rows:
             cols = row.find_all("td")
 
@@ -58,6 +51,7 @@ for i, course_num in enumerate(courses.split(",")):
 
             label, value = cols[0].text, cols[1].text
 
+            # not pretty, but robust to missing rows etc.
             if label == "Point( ECTS )":
                 course["ects"] = value
             if label == "Course type":
@@ -76,6 +70,9 @@ for i, course_num in enumerate(courses.split(",")):
                 course["location"] = value
             if label == "Language of instruction":
                 course["language"] = value
+
+        header = contents.find("div", {"class": "col-xs-8"})
+        course["name"] = " ".join(header.text.split(" ")[1:])
 
         # write course to overall course dict
         course_dict[course_num] = course
