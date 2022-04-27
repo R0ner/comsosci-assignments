@@ -16,8 +16,8 @@ def get_master_dict():
 
     master_dict = {}
     for key in common_keys:
-        master_dict[key] = {**page_info[key], **
-                            eval_and_grades[key], **percentiles[key]}
+        master_dict[key] = {**eval_and_grades[key],
+                            **percentiles[key], **page_info[key]}
 
     return master_dict
 
