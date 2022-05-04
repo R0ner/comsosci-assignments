@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/comsosci-assignments/static/css/main.4b5b9c60.css",
+    "main.js": "/comsosci-assignments/static/js/main.c3113d75.js",
+    "static/js/787.0b897a86.chunk.js": "/comsosci-assignments/static/js/787.0b897a86.chunk.js",
+    "static/media/DTU_Background_Pattern_Blue_RGB.jpg": "/comsosci-assignments/static/media/DTU_Background_Pattern_Blue_RGB.b4cb29a8f25f133a1bc3.jpg",
+    "static/media/course_base.png": "/comsosci-assignments/static/media/course_base.b66671050474fbd1b979.png",
+    "static/media/NeoSansProRegular.OTF": "/comsosci-assignments/static/media/NeoSansProRegular.5b66ccda826ee45ad470.OTF",
+    "index.html": "/comsosci-assignments/index.html",
+    "main.4b5b9c60.css.map": "/comsosci-assignments/static/css/main.4b5b9c60.css.map",
+    "main.c3113d75.js.map": "/comsosci-assignments/static/js/main.c3113d75.js.map",
+    "787.0b897a86.chunk.js.map": "/comsosci-assignments/static/js/787.0b897a86.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b5b9c60.css",
+    "static/js/main.c3113d75.js"
+  ]
+}
