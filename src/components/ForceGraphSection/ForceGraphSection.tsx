@@ -58,7 +58,7 @@ const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
     }
 
     if (!done) {
-      setData(graphData);
+      setData(genRandomTree(40));
       setDone(true);
     }
 
