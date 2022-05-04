@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, useRef } from 'react';
 import styles from './WordcloudSection.module.scss';
 import untypedTFIDF from '../../department_tfidf_scores.json';
 
@@ -53,6 +53,9 @@ const WordcloudSection: FC<WordcloudSectionProps> = () => {
   const [selOption, setSelOption] = useState(departments[0]);
   const [cloudWords, setCloudWords] = useState(TFIDF[selOption.value]);
 
+  // Probably would be better to use refs
+  //const cloudRef = useRef<HTMLDivElement>();
+
   const HandleChange = (obj: any) => {
     setSelOption(obj);
     setCloudWords(TFIDF[obj.value]);
@@ -102,32 +105,36 @@ const WordcloudSection: FC<WordcloudSectionProps> = () => {
   return (
 
     <div className={styles.WordcloudSection}>
-      <div>
-        <h3>Departments as the sum of their courses</h3>
-        <p>
-          From a students perspective, the defining factor of a department is its courses.
-          To see which topics are covered by the courses of each department, we've concatenated
-          course names and descriptions and performed a <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">TF-IDF</a> analysis.
-          In such an analysis, each word is weighted by the following formula:
-        </p>
-        <Latex displayMode={true}>{"$$\\text{tf-idf}(t, d) = tf(t, d) \\cdot idf(t)$$"}</Latex>
-        <p>
-          The score is proportional to its frequency in the document (tf), and inversely
-          proportional to the frequency in the entire corpus (idf). Mathematically, the terms are defined
-          as follows:
-        </p>
-        <Latex displayMode={true}>{"$$tf(t, d) = \\frac{count(t, d)}{\\sum_{t'} count(t', d)}$$"}</Latex>
-        <Latex displayMode={true}>{"$$idf(t) = \\log \\frac{|D|}{|{d \\in D : t \\in d}|}$$"}</Latex>
-        <p>Where t is a term, d is a document, and D is the entire corpus.</p>
+      <h1>Departments as the sum of their courses</h1>
+      <div className='wrapper'>
+        <div>
+          <p>
+            From a students perspective, the defining factor of a department is its courses.
+            To see which topics are covered by the courses of each department, we've concatenated
+            course names and descriptions and performed a <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">TF-IDF</a> analysis.
+            In such an analysis, each word is weighted by the following formula:
+          </p>
+          <Latex displayMode={true}>{"$$\\text{tf-idf}(t, d) = tf(t, d) \\cdot idf(t)$$"}</Latex>
+          <p>
+            The score is proportional to its frequency in the document (tf), and inversely
+            proportional to the frequency in the entire corpus (idf). Mathematically, the terms are defined
+            as follows:
+          </p>
+          <Latex displayMode={true}>{"$$tf(t, d) = \\frac{count(t, d)}{\\sum_{t'} count(t', d)}$$"}</Latex>
+          <Latex displayMode={true}>{"$$idf(t) = \\log \\frac{|D|}{|{d \\in D : t \\in d}|}$$"}</Latex>
+          <p>Where t is a term, d is a document, and D is the entire corpus.</p>
 
-      </div>
-      <div className='wordcloud-column'>
-        <Select
-          className='select'
-          options={departments}
-          value={selOption}
-          onChange={(option) => HandleChange(option)} />
-        <div id="wordcloud" ref={(div) => onMounted(div)}></div>
+        </div>
+        <div className='wordcloud-column'>
+          <Select
+            className='select'
+            options={departments}
+            value={selOption}
+            onChange={(option) => HandleChange(option)} />
+
+          <div id="wordcloud" ref={(div) => onMounted(div)}></div>
+        </div>
+
       </div>
     </div>
   )

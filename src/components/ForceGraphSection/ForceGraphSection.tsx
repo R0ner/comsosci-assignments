@@ -1,75 +1,36 @@
-import React, { FC, useCallback, useMemo, useState, useRef } from 'react';
+import { FC, useCallback, useState, useRef } from 'react';
 import styles from './ForceGraphSection.module.scss';
-import * as d3 from 'd3';
-import { Force, SimulationLinkDatum, SimulationNodeDatum } from 'd3';
 import ForceGraph3D from "react-force-graph-3d";
-import { Sprite, CanvasTexture, SpriteMaterial } from "three";
 import SpriteText from "three-spritetext";
 import Select from 'react-select';
 
 import untypedGraphData from '../../graph_dict.json';
 
-interface ForceGraphSectionProps { }
-
-interface ForceGraphNode extends SimulationNodeDatum {
-  id: number,
-  r: number
-}
-
-interface ForceGraphLink extends SimulationLinkDatum<ForceGraphNode> {
-  source: number,
-  target: number
-}
-
-interface ForceGraphProps {
-  nodes: ForceGraphNode[],
-  links: ForceGraphLink[],
-  charge: number
-}
-
 const graphData = untypedGraphData as any;
 
-const genRandomTree: any = (N = 1000) => {
-  return {
-    nodes: Array.from(Array(N).keys()).map(i => ({
-      id: i,
-      name: "bruh",
-      label: "full name",
-      color: "#ff0000"
-    })),
-    links: Array.from(Array(N).keys())
-      .filter(id => id)
-      .map(id => ({
-        source: id,
-        target: Math.round(Math.random() * (id - 1)),
-      }))
-  };
-};
 
-function getRandomHexColor(): string {
-  return '#' + Math.floor((Math.random() * 0xffffff)).toString(16).padStart(6, '0');
-}
-
-const colorMap = Array.from(Array(20).keys()).map(i => getRandomHexColor())
-
+interface ForceGraphSectionProps { }
 
 const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
 
+  // State definition
   const [data, setData] = useState({ nodes: [], links: [] });
   const [done, setDone] = useState(false);
   const [width, setWidth] = useState(0);
 
+  // Reference for Force Graph object
+  const fgRef = useRef<typeof ForceGraph3D>();
+
+  // Adjust forcegraph width when div is mounted
   function onMounted(div: any) {
     if (!div) {
       return false
     }
 
     setWidth(div.offsetWidth);
-
   }
 
-  const fgRef = useRef<typeof ForceGraph3D>();
-
+  // When course is selected in the menu, zoom to it
   const handleChange = useCallback((option: any) => {
 
     if (fgRef === null) {
@@ -91,15 +52,14 @@ const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
     );
   }, [fgRef]);
 
+  // Load data, or reset position if data is already loaded
   const buttonClick = (arg: any) => {
     console.log(done, data)
     if (!done) {
 
       setDone(true);
-      console.log("Loading data")
       setData(graphData);
     } else {
-      console.log("Resetting position")
       const ref = fgRef as any;
 
       ref.current.cameraPosition(
@@ -118,7 +78,6 @@ const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
         the TF-IDF percentile necessary for a topic to be included. This was done to allow a bearable
         framerate while the simulation is running. To find a specific course, search in the bar below:
       </p>
-
 
       <div ref={(div: any) => onMounted(div)}>
         <div className='controls'>

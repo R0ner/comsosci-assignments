@@ -1,1 +1,7 @@
-.StaticGraphSection {}
+.StaticGraphSection {
+    [class~="wrapper"] {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        column-gap: 1em;
+    }
+}
