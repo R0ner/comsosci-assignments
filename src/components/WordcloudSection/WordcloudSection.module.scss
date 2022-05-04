@@ -1,0 +1,17 @@
+.WordcloudSection {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    column-gap: 1em;
+
+    background-color: transparent;
+
+    [class~="wordcloud-column"] {
+        margin-right: 1em;
+    }
+
+    [class~="select"] {
+        color: black;
+        margin-bottom: 1em;
+    }
+
+}

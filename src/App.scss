@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+
+  // Sections are wrapped in plain divs
+  [class~="outer-wrapper"] {
+    margin-bottom: 5em;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    padding: 2em;
+
+
+    a {
+      color: white;
+    }
+
+    a:hover {
+      color: blue;
+    }
+  }
+
+}

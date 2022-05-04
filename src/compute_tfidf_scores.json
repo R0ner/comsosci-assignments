@@ -1,0 +1,402 @@
+[
+    {
+        "text": "security",
+        "value": 1.0
+    },
+    {
+        "text": "proofs",
+        "value": 0.7190688603472838
+    },
+    {
+        "text": "differential",
+        "value": 0.6983668517985773
+    },
+    {
+        "text": "biometric",
+        "value": 0.6565411333605636
+    },
+    {
+        "text": "spaces",
+        "value": 0.62210481095453
+    },
+    {
+        "text": "algorithms",
+        "value": 0.5918468950985952
+    },
+    {
+        "text": "rendering",
+        "value": 0.5767220789231009
+    },
+    {
+        "text": "algebra",
+        "value": 0.549767042238887
+    },
+    {
+        "text": "ai",
+        "value": 0.5258920506195681
+    },
+    {
+        "text": "memory",
+        "value": 0.5149359662316604
+    },
+    {
+        "text": "logical",
+        "value": 0.5063643810095012
+    },
+    {
+        "text": "processor",
+        "value": 0.475166361920322
+    },
+    {
+        "text": "convergence",
+        "value": 0.4702966730064838
+    },
+    {
+        "text": "infinite",
+        "value": 0.4702966730064838
+    },
+    {
+        "text": "graphics",
+        "value": 0.43670405350602065
+    },
+    {
+        "text": "convex",
+        "value": 0.43556916509362853
+    },
+    {
+        "text": "cognitive",
+        "value": 0.43556916509362853
+    },
+    {
+        "text": "pde",
+        "value": 0.43254155919232573
+    },
+    {
+        "text": "proof",
+        "value": 0.40851147257052983
+    },
+    {
+        "text": "arithmetic",
+        "value": 0.3959719682669351
+    },
+    {
+        "text": "programming",
+        "value": 0.39355976520040026
+    },
+    {
+        "text": "game",
+        "value": 0.3906239510644724
+    },
+    {
+        "text": "agile",
+        "value": 0.386315124255326
+    },
+    {
+        "text": "algebraic",
+        "value": 0.38250131514669056
+    },
+    {
+        "text": "computers",
+        "value": 0.3769446462534735
+    },
+    {
+        "text": "ux",
+        "value": 0.3761733698535883
+    },
+    {
+        "text": "cache",
+        "value": 0.37516636192032204
+    },
+    {
+        "text": "propositional",
+        "value": 0.37516636192032204
+    },
+    {
+        "text": "manifolds",
+        "value": 0.37516636192032204
+    },
+    {
+        "text": "mathematics",
+        "value": 0.3689226204497794
+    },
+    {
+        "text": "algorithm",
+        "value": 0.363376249389356
+    },
+    {
+        "text": "processors",
+        "value": 0.3563747714402416
+    },
+    {
+        "text": "cryptology",
+        "value": 0.3439024984269619
+    },
+    {
+        "text": "logic",
+        "value": 0.33998751296352225
+    },
+    {
+        "text": "languages",
+        "value": 0.33963861602513773
+    },
+    {
+        "text": "abstraction",
+        "value": 0.3365761730268948
+    },
+    {
+        "text": "maple",
+        "value": 0.3365761730268948
+    },
+    {
+        "text": "constrained",
+        "value": 0.3365761730268948
+    },
+    {
+        "text": "polynomials",
+        "value": 0.3364212127051422
+    },
+    {
+        "text": "programs",
+        "value": 0.33268241017833766
+    },
+    {
+        "text": "embedded",
+        "value": 0.32868253163723005
+    },
+    {
+        "text": "solution",
+        "value": 0.3272494642795552
+    },
+    {
+        "text": "inverse",
+        "value": 0.32668536008634375
+    },
+    {
+        "text": "sparse",
+        "value": 0.3191298852543997
+    },
+    {
+        "text": "curvature",
+        "value": 0.31677757461354805
+    },
+    {
+        "text": "bayesian",
+        "value": 0.31666666666666665
+    },
+    {
+        "text": "signal",
+        "value": 0.31666666666666665
+    },
+    {
+        "text": "formalisms",
+        "value": 0.3126386349336017
+    },
+    {
+        "text": "riemannian",
+        "value": 0.3126386349336017
+    },
+    {
+        "text": "linear",
+        "value": 0.3120533049517967
+    },
+    {
+        "text": "circuit",
+        "value": 0.311052405477265
+    },
+    {
+        "text": "distributed",
+        "value": 0.30571624602346814
+    },
+    {
+        "text": "exponential",
+        "value": 0.3038186286057007
+    },
+    {
+        "text": "games",
+        "value": 0.30233357550416823
+    },
+    {
+        "text": "cryptographic",
+        "value": 0.2969789762002013
+    },
+    {
+        "text": "image",
+        "value": 0.29320745686199806
+    },
+    {
+        "text": "hardware",
+        "value": 0.2916666666666667
+    },
+    {
+        "text": "computing",
+        "value": 0.2916666666666667
+    },
+    {
+        "text": "markov",
+        "value": 0.2893510748625721
+    },
+    {
+        "text": "symbolic",
+        "value": 0.28553726575393656
+    },
+    {
+        "text": "uq",
+        "value": 0.2813747714402416
+    },
+    {
+        "text": "machine",
+        "value": 0.27917306372575246
+    },
+    {
+        "text": "mining",
+        "value": 0.27718037778685456
+    },
+    {
+        "text": "numbers",
+        "value": 0.2764260739192139
+    },
+    {
+        "text": "parallel",
+        "value": 0.27452071071495093
+    },
+    {
+        "text": "relational",
+        "value": 0.26874095600370507
+    },
+    {
+        "text": "theorem",
+        "value": 0.2676497442478792
+    },
+    {
+        "text": "discrete",
+        "value": 0.2676497442478792
+    },
+    {
+        "text": "asynchronous",
+        "value": 0.2643309528397546
+    },
+    {
+        "text": "multivariate",
+        "value": 0.25738177937350776
+    },
+    {
+        "text": "compilers",
+        "value": 0.25738177937350776
+    },
+    {
+        "text": "circuits",
+        "value": 0.25589014417047107
+    },
+    {
+        "text": "vhdl",
+        "value": 0.25194464625347346
+    },
+    {
+        "text": "subsymbolic",
+        "value": 0.25011090794688134
+    },
+    {
+        "text": "mpc",
+        "value": 0.25011090794688134
+    },
+    {
+        "text": "rings",
+        "value": 0.25011090794688134
+    },
+    {
+        "text": "cps",
+        "value": 0.25011090794688134
+    },
+    {
+        "text": "architecture",
+        "value": 0.25
+    },
+    {
+        "text": "prove",
+        "value": 0.2459484136331863
+    },
+    {
+        "text": "elliptic",
+        "value": 0.24030086621795874
+    },
+    {
+        "text": "hilbert",
+        "value": 0.24030086621795874
+    },
+    {
+        "text": "pdes",
+        "value": 0.24030086621795874
+    },
+    {
+        "text": "equationsdetermine",
+        "value": 0.24030086621795874
+    },
+    {
+        "text": "recursive",
+        "value": 0.237583180960161
+    },
+    {
+        "text": "equations",
+        "value": 0.23753311272450192
+    },
+    {
+        "text": "combinatorial",
+        "value": 0.2351483365032419
+    },
+    {
+        "text": "massive",
+        "value": 0.2351483365032419
+    },
+    {
+        "text": "statistical",
+        "value": 0.2323614980654588
+    },
+    {
+        "text": "mathematical",
+        "value": 0.2323614980654588
+    },
+    {
+        "text": "regression",
+        "value": 0.23148085989005768
+    },
+    {
+        "text": "fourier",
+        "value": 0.23148085989005768
+    },
+    {
+        "text": "sequential",
+        "value": 0.23148085989005768
+    },
+    {
+        "text": "graph",
+        "value": 0.23007777214606104
+    },
+    {
+        "text": "risk",
+        "value": 0.22928112052831381
+    },
+    {
+        "text": "matrix",
+        "value": 0.22424708301849341
+    },
+    {
+        "text": "digital",
+        "value": 0.22216936107052374
+    },
+    {
+        "text": "matrices",
+        "value": 0.21993825620934707
+    },
+    {
+        "text": "operators",
+        "value": 0.21993825620934707
+    },
+    {
+        "text": "stochastic",
+        "value": 0.2196161434642586
+    },
+    {
+        "text": "intelligence",
+        "value": 0.21912168775815336
+    }
+]
