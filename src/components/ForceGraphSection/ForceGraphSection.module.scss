@@ -1,8 +1,25 @@
 .ForceGraphSection {
     background-color: transparent;
 
+    [class~="controls"] {
+        display: grid;
+        grid-template-columns: auto 75%;
+        column-gap: 1em;
+
+    }
+
     [class~="select"] {
         color: black;
         margin-bottom: 1em;
     }
+
+    button {
+        margin-bottom: 1em;
+        font-family: "Neo Sans";
+        border-radius: 8px;
+        font-size: medium;
+        border: none;
+        text-decoration: none;
+    }
+
 }

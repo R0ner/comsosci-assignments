@@ -64,11 +64,6 @@ const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
       return false
     }
 
-    if (!done) {
-      setData(graphData);
-      setDone(true);
-    }
-
     setWidth(div.offsetWidth);
 
   }
@@ -96,6 +91,25 @@ const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
     );
   }, [fgRef]);
 
+  const buttonClick = (arg: any) => {
+    console.log(done, data)
+    if (!done) {
+
+      setDone(true);
+      console.log("Loading data")
+      setData(graphData);
+    } else {
+      console.log("Resetting position")
+      const ref = fgRef as any;
+
+      ref.current.cameraPosition(
+        { x: 0, y: 0, z: 2500 }, // new position
+        { x: 0, y: 0, z: 0 }, // lookAt ({ x, y, z })
+        3000  // ms transition duration
+      );
+    }
+  };
+
   return (
     <div className={styles.ForceGraphSection}>
       <h3>Inducing structure</h3>
@@ -105,13 +119,18 @@ const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
         framerate while the simulation is running. To find a specific course, search in the bar below:
       </p>
 
+
       <div ref={(div: any) => onMounted(div)}>
-        <Select
-          className='select'
-          options={graphData.nodes.map((node: any) => { return { value: node.id, label: `${node.name} ${node.label}` } })}
-          onChange={(option) => handleChange(option)}
-          isSearchable={true}
-        />
+        <div className='controls'>
+          <button type="button" onClick={buttonClick}>{done ? "Reset Position" : "Load Graph"}</button>
+          <Select
+            className='select'
+            options={data.nodes.map((node: any) => { return { value: node.id, label: `${node.name} ${node.label}` } })}
+            onChange={(option) => handleChange(option)}
+            isSearchable={true}
+          />
+        </div>
+
         <ForceGraph3D
           graphData={data}
           width={width}

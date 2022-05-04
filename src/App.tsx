@@ -3,7 +3,9 @@ import DescriptionSection from './components/DescriptionSection/DescriptionSecti
 import ExpandableGraphSection from './components/ExpandableGraphSection/ExpandableGraphSection';
 import Footer from './components/Footer/Footer';
 import ForceGraphSection from './components/ForceGraphSection/ForceGraphSection';
+import StaticGraphSection from './components/StaticGraphSection/StaticGraphSection';
 import TitleSection from './components/TitleSection/TitleSection';
+import TopicGradeSection from './components/TopicGradeSection/TopicGradeSection';
 import WordcloudSection from './components/WordcloudSection/WordcloudSection';
 
 function App() {
@@ -17,11 +19,17 @@ function App() {
         <WordcloudSection />
       </div>
       <div className='outer-wrapper'>
-        <ForceGraphSection />
+        <TopicGradeSection />
       </div>
       <div className='outer-wrapper'>
-        <ExpandableGraphSection />
+        <StaticGraphSection />
       </div>
+      <div className='outer-wrapper'>
+        <ForceGraphSection />
+      </div>
+      {/* <div className='outer-wrapper'>
+        <ExpandableGraphSection />
+      </div> */}
       <Footer />
     </div>
   );
