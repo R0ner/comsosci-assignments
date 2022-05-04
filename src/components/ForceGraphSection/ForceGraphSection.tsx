@@ -1,10 +1,11 @@
-import React, { FC, useCallback, useMemo, useState } from 'react';
+import React, { FC, useCallback, useMemo, useState, useRef } from 'react';
 import styles from './ForceGraphSection.module.scss';
 import * as d3 from 'd3';
 import { Force, SimulationLinkDatum, SimulationNodeDatum } from 'd3';
 import ForceGraph3D from "react-force-graph-3d";
 import { Sprite, CanvasTexture, SpriteMaterial } from "three";
 import SpriteText from "three-spritetext";
+import Select from 'react-select';
 
 import untypedGraphData from '../../graph_dict.json';
 
@@ -45,6 +46,12 @@ const genRandomTree: any = (N = 1000) => {
   };
 };
 
+function getRandomHexColor(): string {
+  return '#' + Math.floor((Math.random() * 0xffffff)).toString(16).padStart(6, '0');
+}
+
+const colorMap = Array.from(Array(20).keys()).map(i => getRandomHexColor())
+
 
 const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
 
@@ -58,7 +65,7 @@ const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
     }
 
     if (!done) {
-      setData(genRandomTree(40));
+      setData(graphData);
       setDone(true);
     }
 
@@ -66,49 +73,63 @@ const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
 
   }
 
+  const fgRef = useRef<typeof ForceGraph3D>();
 
+  const handleChange = useCallback((option: any) => {
+
+    if (fgRef === null) {
+      return false
+    }
+
+    const node = graphData.nodes[option.value]
+
+    const ref = fgRef as any;
+
+    // Aim at node from outside it
+    const distance = 200;
+    const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
+
+    ref.current.cameraPosition(
+      { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
+      node, // lookAt ({ x, y, z })
+      3000  // ms transition duration
+    );
+  }, [fgRef]);
 
   return (
     <div className={styles.ForceGraphSection}>
-      ForceGraphSection Component
-
+      <h3>Inducing structure</h3>
+      <p>
+        To make an interactive version of the course graph, we reduced the average degree of nodes by increasing
+        the TF-IDF percentile necessary for a topic to be included. This was done to allow a bearable
+        framerate while the simulation is running. To find a specific course, search in the bar below:
+      </p>
 
       <div ref={(div: any) => onMounted(div)}>
+        <Select
+          className='select'
+          options={graphData.nodes.map((node: any) => { return { value: node.id, label: `${node.name} ${node.label}` } })}
+          onChange={(option) => handleChange(option)}
+          isSearchable={true}
+        />
         <ForceGraph3D
           graphData={data}
-          nodeLabel="id"
           width={width}
           height={Math.min(700, Math.floor(width / 16 * 9))}
 
           nodeThreeObject={(node: any) => {
             const sprite = new SpriteText(node.name);
-            sprite.color = node.color;
-            sprite.textHeight = 8;
+            sprite.color = graphData.department_cmap[node.department_id];
+            sprite.textHeight = 6 + Math.log2(node.weight * 1000);
             return sprite;
           }}
 
-          linkThreeObjectExtend={true}
-          linkLabel={(link: any) => `${link.source} > ${link.target}`}
-          linkThreeObject={(link: any) => {
-            // extend link with text sprite
-            const sprite = new SpriteText(`${link.source} > ${link.target}`);
-            sprite.color = 'lightgrey';
-            sprite.textHeight = 1.5;
-            return sprite;
-          }}
-          linkPositionUpdate={(sprite, { start, end }) => {
+          nodeLabel={(node: any) => `${node.label}: ${Math.round(node.weight * 10000) / 10}`}
 
-            const middlePos = {
-              x: start.x + (end.x - start.x) / 2,
-              y: start.y + (end.y - start.y) / 2,
-              z: start.z + (end.z - start.z) / 2
-            }
+          linkLabel={(link: any) => `${link.words.join(", ")}: ${Math.round(link.weight * 10000) / 10}`}
+          linkWidth={(link: any) => link.weight * 200}
 
-            // Position sprite
-            Object.assign(sprite.position, middlePos);
-
-            return true
-          }}
+          ref={fgRef as any}
         />
       </div>
 
