@@ -147,6 +147,7 @@ for index, (course, val) in enumerate(G.nodes(data=True)):
     course_ids[course] = index
     department_name = courses.loc[course, 'department']
     partition_id = partition_ids[course]
+    weight = sum([attr['weight'] for source, target, attr in G.edges(course, data=True)])
     node = {
         'id': index,
         'name': course,
@@ -154,7 +155,8 @@ for index, (course, val) in enumerate(G.nodes(data=True)):
         'department_id': department_ids[department_name],
         'partition_id': partition_id,
         'department_name': department_name,
-        'partition_name': partition_names[partition_id]
+        'partition_name': partition_names[partition_id],
+        'weight': weight
     }
     nodes.append(node)
 
@@ -169,7 +171,29 @@ for source, target, attr in G.edges(data=True):
     }
     links.append(link)
 
-graph_dict = {'nodes': nodes, 'links': links}
+n_departments = courses['department'].nunique()
+n_communities = len(partition)
+
+cm = plt.get_cmap('tab20b')
+
+color_linspace = np.linspace(0, 1, num=n_departments)
+department_cmap = {i: tuple((np.array(cm(color_linspace[i]))[:3] * 255).astype(int)) for i in range(n_departments)}
+department_cmap = {i: "#{0:02x}{1:02x}{2:02x}".format(*rgb) for i, rgb in department_cmap.items()}
+
+cm = plt.get_cmap('gist_rainbow')
+
+color_linspace = np.linspace(0, 1, num=n_communities)
+community_cmap = {i: tuple((np.array(cm(color_linspace[i]))[:3] * 255).astype(int)) for i in range(n_communities)}
+community_cmap = {i: "#{0:02x}{1:02x}{2:02x}".format(*rgb) for i, rgb in community_cmap.items()}
+
+graph_dict = {
+    'nodes': nodes, 
+    'links': links, 
+    'department_cmap': department_cmap, 
+    'community_cmap': community_cmap
+}
 
 with open('graph_dict.json', 'w') as outfile:
         json.dump(graph_dict, outfile, indent=8)
+
+
