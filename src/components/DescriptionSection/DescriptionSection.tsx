@@ -16,7 +16,7 @@ const DescriptionSection: FC<DescriptionSectionProps> = () => (
       a useful resource for students researching potential courses to take
       in the coming semesters. Apart from the details readily available
       on the front page of a course, it also provides access to evaluations
-      from the students. For each course, we collected:
+      from the students. In total we collected data for around 1600 courses. For each course, we collected:
     </p>
     <div className='list'>
       <ul>

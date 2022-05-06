@@ -123,6 +123,8 @@ const WordcloudSection: FC<WordcloudSectionProps> = () => {
           <Latex displayMode={true}>{"$$tf(t, d) = \\frac{count(t, d)}{\\sum_{t'} count(t', d)}$$"}</Latex>
           <Latex displayMode={true}>{"$$idf(t) = \\log \\frac{|D|}{|{d \\in D : t \\in d}|}$$"}</Latex>
           <p>Where t is a term, d is a document, and D is the entire corpus.</p>
+          Using the scored terms, we have visualized the topics in each department in wordclouds. We hope that you find them as 
+          interesting as we do!
 
         </div>
         <div className='wordcloud-column'>
