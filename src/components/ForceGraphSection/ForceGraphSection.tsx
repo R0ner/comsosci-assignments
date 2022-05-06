@@ -105,9 +105,11 @@ const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
           nodeLabel={(node: any) => `${node.label}: ${Math.round(node.weight * 10000) / 10}`}
 
           linkLabel={(link: any) => `${link.words.join(", ")}: ${Math.round(link.weight * 10000) / 10}`}
-          linkWidth={(link: any) => link.weight * 200}
+          linkWidth={(link: any) => link.weight * 250}
 
           ref={fgRef as any}
+
+          cooldownTime={30000}
         />
       </div>
 
