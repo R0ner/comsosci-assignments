@@ -76,7 +76,11 @@ const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
       <p>
         To make an interactive version of the course graph, we reduced the average degree of nodes by increasing
         the TF-IDF percentile necessary for a topic to be included. This was done to allow a bearable
-        framerate while the simulation is running. To find a specific course, search in the bar below:
+        framerate while the simulation is running. 
+        <br/>
+        <br/>
+        The courses are coloured by department. Mouse over courses to the full course name. Mouse over links to see which topic
+        connects the courses. To find a specific course, search in the bar below. Enjoy exploring!
       </p>
 
       <div ref={(div: any) => onMounted(div)}>
