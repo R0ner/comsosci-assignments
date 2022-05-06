@@ -24,6 +24,20 @@ const StaticGraphSection: FC<StaticGraphSectionProps> = () => (
         <br />
         A natural question to ask then is: "Can we partition the courses in
         a better way?" And the just as natural answer is yes. To partition the
+        is determined by the TF-IDF scores of the topics in both courses.
+        The upper graph is partitioned by department, and we see that
+        while some grouping is noticeable, it is not a particularly good
+        one (at least in two dimensions).
+      </div>
+      <div>
+        <img src={String(department_graph)} alt="Courses partitioned by department" />
+
+      </div>
+    </div>
+    <div className='wrapper'>
+      <div>
+        A natural question to ask then is: can we partition the courses in
+        a better way? And the just as natural answer is yes. To partition the
         courses in a better way, we must know what a better partition is. In
         this case, we will define a good partition as one with high 
         <a href='https://en.wikipedia.org/wiki/Modularity'>modularity</a>.
@@ -38,7 +52,6 @@ const StaticGraphSection: FC<StaticGraphSectionProps> = () => (
 
       </div>
       <div>
-        <img src={String(department_graph)} alt="Courses partitioned by department" />
         <img src={String(partition_graph)} alt="Courses partitioned by Louvain community" />
 
       </div>
