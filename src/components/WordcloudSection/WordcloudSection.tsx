@@ -122,7 +122,10 @@ const WordcloudSection: FC<WordcloudSectionProps> = () => {
           </p>
           <Latex displayMode={true}>{"$$tf(t, d) = \\frac{count(t, d)}{\\sum_{t'} count(t', d)}$$"}</Latex>
           <Latex displayMode={true}>{"$$idf(t) = \\log \\frac{|D|}{|{d \\in D : t \\in d}|}$$"}</Latex>
-          <p>Where t is a term, d is a document, and D is the entire corpus.</p>
+          <p>Where t is a term, d is a document, and D is the entire corpus. While the formulas are important from
+            a theoretical standpoint, the intuitive explanation might be better; a word is scored highly if it
+            is frequent in the course description, but rare overall.
+          </p>
 
         </div>
         <div className='wordcloud-column'>
