@@ -72,7 +72,7 @@ const ForceGraphSection: FC<ForceGraphSectionProps> = () => {
 
   return (
     <div className={styles.ForceGraphSection}>
-      <h3>Inducing structure</h3>
+      <h3>3D interactive graph</h3>
       <p>
         To make an interactive version of the course graph, we reduced the average degree of nodes by increasing
         the TF-IDF percentile necessary for a topic to be included. This was done to allow a bearable
