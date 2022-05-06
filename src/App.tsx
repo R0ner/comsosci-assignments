@@ -7,6 +7,7 @@ import StaticGraphSection from './components/StaticGraphSection/StaticGraphSecti
 import TitleSection from './components/TitleSection/TitleSection';
 import TopicGradeSection from './components/TopicGradeSection/TopicGradeSection';
 import WordcloudSection from './components/WordcloudSection/WordcloudSection';
+import MoreDetailsSection from './components/MoreDetailsSection/MoreDetailsSection'
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
       {/* <div className='outer-wrapper'>
         <ExpandableGraphSection />
       </div> */}
+      <div className='outer-wrapper'>
+        <MoreDetailsSection />
+      </div>
       <Footer />
     </div>
   );

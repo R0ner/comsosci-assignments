@@ -1,4 +1,4 @@
-.DescriptionSection {
+.MoreDetailsSection {
     background-color: transparent;
     padding-bottom: 0;
     line-height: 1.5;
@@ -8,11 +8,5 @@
         margin-left: -2em;
         margin-right: -2em;
         margin-bottom: -2em;
-    }
-
-    [class~='list'] {
-        text-align: left;
-        width: 30%;
-        margin: 0 auto;
     }
 }

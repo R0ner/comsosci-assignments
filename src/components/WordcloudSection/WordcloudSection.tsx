@@ -121,7 +121,7 @@ const WordcloudSection: FC<WordcloudSectionProps> = () => {
             as follows:
           </p>
           <Latex displayMode={true}>{"$$tf(t, d) = \\frac{count(t, d)}{\\sum_{t'} count(t', d)}$$"}</Latex>
-          <Latex displayMode={true}>{"$$idf(t) = \\log \\frac{|D|}{|{d \\in D : t \\in d}|}$$"}</Latex>
+          <Latex displayMode={true}>{"$$idf(t) = \\log \\left(\\frac{|D|}{|{d \\in D : t \\in d}|}\\right)$$"}</Latex>
           <p>Where t is a term, d is a document, and D is the entire corpus. While the formulas are important from
             a theoretical standpoint, the intuitive explanation might be better; a word is scored highly if it
             is frequent in the course descriptions within the department, but rare among the course descriptions of other departments.

@@ -1,7 +1,18 @@
 .TopicGradeSection {
     [class~="wrapper"] {
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 45% 55%;
         column-gap: 1em;
+        line-height: 1.5;
     }
+    
+    img {
+        width: 90%;
+    }
+}
+
+.Scrollable {
+    overflow-y: scroll;
+    height: 600px;
+    text-align: right;
 }
