@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/comsosci-assignments/static/css/main.ccd6185e.css",
-    "main.js": "/comsosci-assignments/static/js/main.ad6418c0.js",
+    "main.js": "/comsosci-assignments/static/js/main.ac31368f.js",
     "static/js/787.0b897a86.chunk.js": "/comsosci-assignments/static/js/787.0b897a86.chunk.js",
     "static/media/DTU_Background_Pattern_Blue_RGB.jpg": "/comsosci-assignments/static/media/DTU_Background_Pattern_Blue_RGB.b4cb29a8f25f133a1bc3.jpg",
     "static/media/grades_by_topic.png": "/comsosci-assignments/static/media/grades_by_topic.2a2aab8f0207944b5051.png",
@@ -11,11 +11,11 @@
     "static/media/NeoSansProRegular.OTF": "/comsosci-assignments/static/media/NeoSansProRegular.5b66ccda826ee45ad470.OTF",
     "index.html": "/comsosci-assignments/index.html",
     "main.ccd6185e.css.map": "/comsosci-assignments/static/css/main.ccd6185e.css.map",
-    "main.ad6418c0.js.map": "/comsosci-assignments/static/js/main.ad6418c0.js.map",
+    "main.ac31368f.js.map": "/comsosci-assignments/static/js/main.ac31368f.js.map",
     "787.0b897a86.chunk.js.map": "/comsosci-assignments/static/js/787.0b897a86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ccd6185e.css",
-    "static/js/main.ad6418c0.js"
+    "static/js/main.ac31368f.js"
   ]
 }
