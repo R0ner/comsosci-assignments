@@ -19,7 +19,14 @@ const StaticGraphSection: FC<StaticGraphSectionProps> = () => (
         The upper graph is partitioned by department, and we see that
         while some grouping is noticeable, it is not a particularly good
         one (at least in two dimensions).
-        <br />
+      </div>
+      <div>
+        <img src={String(department_graph)} alt="Courses partitioned by department" />
+
+      </div>
+    </div>
+    <div className='wrapper'>
+      <div>
         A natural question to ask then is: can we partition the courses in
         a better way? And the just as natural answer is yes. To partition the
         courses in a better way, we must know what a better partition is. In
@@ -31,7 +38,6 @@ const StaticGraphSection: FC<StaticGraphSectionProps> = () => (
         which is extremely effective both in time and results.
       </div>
       <div>
-        <img src={String(department_graph)} alt="Courses partitioned by department" />
         <img src={String(partition_graph)} alt="Courses partitioned by Louvain community" />
 
       </div>
