@@ -124,7 +124,10 @@ const WordcloudSection: FC<WordcloudSectionProps> = () => {
           <Latex displayMode={true}>{"$$idf(t) = \\log \\frac{|D|}{|{d \\in D : t \\in d}|}$$"}</Latex>
           <p>Where t is a term, d is a document, and D is the entire corpus. While the formulas are important from
             a theoretical standpoint, the intuitive explanation might be better; a word is scored highly if it
-            is frequent in the course description, but rare overall.
+            is frequent in the course descriptions within the department, but rare among the course descriptions of other departments.
+            <br></br>
+            We use the scored terms to visualize the topics in each department in wordclouds found on the right hand side. 
+            We hope that you find them as interesting as we do!
           </p>
 
         </div>

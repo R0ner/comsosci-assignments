@@ -20,14 +20,7 @@ const StaticGraphSection: FC<StaticGraphSectionProps> = () => (
         For instance, the courses in the Department of Chemical Engineering seem to grouped with the courses 
         in the Department of Chemistry. However, while we see that some grouping is noticeable, 
         it is not a particularly good one (at least in two dimensions).
-        <br />
-        <br />
-        A natural question to ask then is: "Can we partition the courses in
-        a better way?" And the just as natural answer is yes. To partition the
-        is determined by the TF-IDF scores of the topics in both courses.
-        The upper graph is partitioned by department, and we see that
-        while some grouping is noticeable, it is not a particularly good
-        one (at least in two dimensions).
+        
       </div>
       <div>
         <img src={String(department_graph)} alt="Courses partitioned by department" />
