@@ -24,7 +24,7 @@ const TopicGradeSection: FC<TopicGradeSectionProps> = () => (
         single words as topics, so we are not able to differentiate between bigrams such as 'social science' or 'social networks'.
         <br/>
         <br/>
-        We have used the topics to visualize the average for all courses in which the topic appears. Use the scrollbar on the figure on 
+        We have used the topics to visualize the average grade for all courses in which the topic appears. Use the scrollbar on the figure on 
         the right hand side to explore the distribution of average grades for every topic that we identified. See if you can find your
         favorite topic on the list. 
         <br/>

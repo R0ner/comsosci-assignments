@@ -32,8 +32,7 @@ const StaticGraphSection: FC<StaticGraphSectionProps> = () => (
         A natural question to ask then is: can we partition the courses in
         a better way? And the just as natural answer is yes. To partition the
         courses in a better way, we must know what a better partition is. In
-        this case, we will define a good partition as one with high 
-        <a href='https://en.wikipedia.org/wiki/Modularity'>modularity</a>.
+        this case, we will define a good partition as one with high <a href='https://en.wikipedia.org/wiki/Modularity'>modularity</a>.
         Modularity is a measure of how well a partition of a graph matches
         the actual structure of the graph. To optimize the modularity we
         use the <a href='https://en.wikipedia.org/wiki/Louvain_method'>Louvain Algorithm</a>,
